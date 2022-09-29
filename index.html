@@ -12,17 +12,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <div class="navbar-item">
-          <strong> Name </strong>
+          <h1>Binge</h1>
         </div>
 
         <a
@@ -41,17 +46,16 @@
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link"> My Library </a>
+            <a id="librarynav" class="navbar-link"> My Library </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item"> To Watch </a>
-              <a class="navbar-item"> Watched </a>
-              <a class="navbar-item"> My Faves </a>
+              <a id="toWatch" class="navbar-item"> To Watch </a>
+              <a id="userFaves" class="navbar-item"> My Faves </a>
             </div>
           </div>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="buttons">
+            <div class="buttons" id="nowPlayingBtn">
               <a class="button is-primary">
                 <strong>Now Playing Near Me</strong>
               </a>
@@ -61,28 +65,24 @@
       </div>
     </nav>
 
-    <div class="column">
-      <div class="column is-11 is-offset-1">
-        <div class="box">
-          <p>
-            <strong>Find a Film</strong>
-          </p>
-          <input
-            type="text"
-            maxlength="512"
-            id="searchTxt"
-            class="searchField"
-          />
-          <input
-            type="button"
-            value="Get Value"
-            onclick="searchMovie(searchTxt.value)"
-          />
+    <section class="section is-medium">
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div class="box has-text-centered">
+            <input
+              class="input is-large"
+              placeholder="What are you watching next?"
+            />
+            <button id="searchBtn" class="button is-primary">
+              <span class="material-symbols-outlined"> arrow_right_alt </span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <img id="poster" src="" alt="Trulli" width="500" height="333" />
+    </section>
 
-    <script src="script.js"></script>
+    <section class="section is-medium"></section>
+
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

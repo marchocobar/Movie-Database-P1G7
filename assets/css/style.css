@@ -1,0 +1,37 @@
+
+
+:root {
+    --blue: #283044;
+    --lightblue: #78A1BB;
+    --mint: #EBF5EE;
+    --pink: #BFA89E;
+    --cin: #8B786D;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--lightblue);
+}
+
+.navbar, .box {
+    background-color: var(--mint);
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+    
+}
+
+.navbar-link, .navbar-dropdown {
+    font-size: 20px;
+}
+
+section p {
+    font-size: 20px;
+}
+
+button.button.is-primary, a.button.is-primary {
+    background-color: var(--blue);
+}
+
