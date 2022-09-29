@@ -1,76 +1,88 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Movie Database App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Movie Database App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <div class="navbar-item">
-        <strong> Name </strong>
-      </div>
-
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            My Library
-          </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              To Watch
-            </a>
-            <a class="navbar-item">
-              Watched
-            </a>
-            <a class="navbar-item">
-              My Faves
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="navbar-end">
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
         <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Now Playing Near Me</strong>
-            </a>
+          <strong> Name </strong>
+        </div>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> My Library </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> To Watch </a>
+              <a class="navbar-item"> Watched </a>
+              <a class="navbar-item"> My Faves </a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Now Playing Near Me</strong>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="column">
-    <div class="column is-11 is-offset-1">
-      <div class="box">
-        <p>
-          <strong>Find a Film</strong>
-        </p>
-        <input class="input is-large" placeholder="What are you watching next?">
+    <div class="column">
+      <div class="column is-11 is-offset-1">
+        <div class="box">
+          <p>
+            <strong>Find a Film</strong>
+          </p>
+          <input
+            type="text"
+            maxlength="512"
+            id="searchTxt"
+            class="searchField"
+          />
+          <input
+            type="button"
+            value="Get Value"
+            onclick="searchMovie(searchTxt.value)"
+          />
+        </div>
       </div>
     </div>
-  </div>
+    <img id="poster" src="" alt="Trulli" width="500" height="333" />
 
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
