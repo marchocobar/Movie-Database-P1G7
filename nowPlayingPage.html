@@ -9,14 +9,14 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="./assets/css/style.css">
     </head>
         
     <body>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <div class="navbar-item">
-            <strong><a href="./index.html"> Name </a></strong>
+            <h1><a href="./index.html"> Binge </a></h1>
           </div>
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -36,33 +36,23 @@
                   To Watch
                 </a>
                 <a class="navbar-item">
-                  Watched
-                </a>
-                <a class="navbar-item">
                   My Faves
                 </a>
               </div>
             </div>
           </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Now Playing Near Me</strong>
-                </a>
-              </div>
             </div>
           </div>
         </div>
 
       </nav>
 
-      <section class="pageTitle section">
-        <h1 class="title text-center nowPlayingTitle" id="nowPlayingHeader">Now Playing Near Me</h1>
+      <section class="pageTitle section has-text-centered">
+        <h1 class="title nowPlayingTitle has-text-white" id="nowPlayingHeader">Now Playing Near Me</h1>
       </section>
 
       <section class="filmsNowShowing section">
-        <h2 class="title nowPlayingTitle">Films Now Showing</h2>
+        <h2 class="title nowPlayingTitle has-text-white">Films Now Showing</h2>
 
         <div class="columns is-desktop is-1" id="filmCol"></div>
 
@@ -71,7 +61,7 @@
 
       <section class="cinemaSection section">
 
-        <h2 class="title nowPlayingTitle">Theaters Near Me</h2>
+        <h2 class="title nowPlayingTitle has-text-white">Theaters Near Me</h2>
 
         <div class="table-container">
           <table class="table is-fullwidth is-hoverable">
