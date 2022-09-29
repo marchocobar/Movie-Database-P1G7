@@ -8,3 +8,17 @@ function toNowPlaying(event) {
 
 nowPlayBtn.addEventListener("click", toNowPlaying)
 
+
+function searchMovie(movie) {
+    fetch("http://www.omdbapi.com/?s=" + movie + "&apikey=294c5c8e")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log(data.Search[0].Title);
+        console.log(data.Search[0].Year);
+        console.log(data.Search[0].Poster);
+  
+        document.getElementById("poster").src = data.Search[0].Poster;
+      });
+  }
+  //<img id="poster" src="" alt="Trulli" width="500" height="333" />//
