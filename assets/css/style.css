@@ -23,7 +23,7 @@ h1 {
     
 }
 
-.navbar-link, .navbar-dropdown {
+.navbar-link, .navbar-item {
     font-size: 20px;
 }
 
@@ -31,7 +31,31 @@ section p {
     font-size: 20px;
 }
 
-button.button.is-primary, a.button.is-primary {
+.button.is-primary {
     background-color: var(--blue);
 }
 
+.button.is-primary:hover {
+    background-color: var(--pink);
+}
+
+div.slider-item {
+    padding-left: 40px;
+}
+
+div.card-content {
+    background-color: var(--mint)
+}
+
+.button.button.is-primary {
+    margin-right: 17px;
+ }
+
+ h2 {
+    border-left: solid 5px var(--cin);
+    padding: 15px;
+ }
+
+ .title.is-4 {
+    color: var(--cin);
+ }
