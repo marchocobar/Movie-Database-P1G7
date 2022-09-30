@@ -49,16 +49,23 @@
         <a href="#trending" class="navbar-item">
           Trending
         </a>
+        <a id="nowPlayingBtn" class="navbar-item">
+          Now Playing Near Me
+        </a>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="buttons" id="nowPlayingBtn">
-            <a class="button is-primary">
-              <strong>Now Playing Near Me</strong>
+          <div class="buttons">
+            <a class="js-modal-trigger button is-primary" data-target="modal-sign-up">
+              <strong>Sign up</strong>
+            </a>
+            <a class="js-modal-trigger button is-light" data-target="modal-sign-up">
+              Log in
             </a>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </nav>
 
@@ -100,7 +107,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -124,32 +131,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      info
-                    </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <button id="addBtn" class="button is-primary">
-                <span class="material-symbols-outlined">
-                  add_circle
-                </span>
-                <button id="likeBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    favorite
-                  </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -174,7 +156,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -199,7 +181,32 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
+                    <span class="material-symbols-outlined">
+                      info
+                    </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by5">
+                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4">Movie Title</p>
+              <button id="addBtn" class="button is-primary">
+                <span class="material-symbols-outlined">
+                  add_circle
+                </span>
+                <button id="likeBtn" class="button is-primary">
+                  <span class="material-symbols-outlined">
+                    favorite
+                  </span>
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -223,7 +230,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -247,7 +254,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -271,7 +278,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -295,7 +302,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -319,7 +326,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -357,7 +364,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -382,7 +389,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -407,7 +414,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -432,7 +439,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -457,7 +464,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -482,7 +489,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -507,7 +514,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -532,7 +539,7 @@
                   <span class="material-symbols-outlined">
                     favorite
                   </span>
-                  <button id="descriptionBtn" class="button is-primary">
+                  <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
                     <span class="material-symbols-outlined">
                       info
                     </span>
@@ -544,10 +551,48 @@
     <!-- End Carousel -->
 
 
+
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
     <script src="./assets/js/script.js"></script>
 
+   <!-- LOGIN MODAL -->
+    <div id="modal-sign-up" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <form class="box">
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="email" placeholder="e.g. alex@example.com">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input class="input" type="password" placeholder="********">
+            </div>
+          </div>
 
+          <button class="button is-primary">Sign in</button>
+        </form>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <!-- MOVIE DESCRIPTION MODALS -->
+    <div id= "movie-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              DESCRIPTION
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
 </body>
 
 </html>
