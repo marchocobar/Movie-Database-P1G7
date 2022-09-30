@@ -9,8 +9,6 @@ function toNowPlaying(event) {
 nowPlayBtn.addEventListener("click", toNowPlaying)
 
 
-
-
 bulmaCarousel.attach('#carousel-demo', {
     slidesToScroll: 1,
     slidesToShow: 4,
