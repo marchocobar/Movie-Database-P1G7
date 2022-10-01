@@ -27,14 +27,9 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                My Library
-              </a>
-              <div class="navbar-dropdown">
-                <a href="myLibraryPage.html" class="navbar-item">
+                <u class="navbar-item">
                   To Watch
-                </a>
+                </u>
                 <a href="myFavePage.html" class="navbar-item">
                   My Faves
                 </a>
@@ -48,46 +43,5 @@
       </nav>
 
       <section class="pageTitle section has-text-centered">
-        <h1 class="title nowPlayingTitle has-text-white" id="nowPlayingHeader">Now Playing Near Me</h1>
+        <h1 class="title nowPlayingTitle has-text-white" id="nowPlayingHeader">To Watch</h1>
       </section>
-
-      <section class="filmsNowShowing section">
-        <h2 class="title nowPlayingTitle has-text-white">Films Now Showing</h2>
-
-        <div class="columns is-desktop is-1" id="filmCol"></div>
-
-      </section>
-
-
-      <section class="cinemaSection section">
-
-        <h2 class="title nowPlayingTitle has-text-white">Theaters Near Me</h2>
-
-        <div class="table-container">
-          <table class="table is-fullwidth is-hoverable">
-
-            <thead>
-              <tr>
-                <th><abbr title="Name">Movie Theater</abbr></th>
-                <th><abbr title="address">Address</abbr></th>
-                <th><abbr title="City">City</abbr></th>
-                <th><abbr title="State">State</abbr></th>
-                <th><abbr title="Zipcode">Zip Code</abbr></th>
-                <th><abbr title="Distance">Distance</abbr></th>
-              </tr>
-            </thead>
-  
-            <tbody id="tablebody"></tbody>
-  
-          </table>
-
-        </div>
-    
-      </section>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="./assets/js/nowPlayingScript.js"></script>
-    </body>
-  
-
-</html>
