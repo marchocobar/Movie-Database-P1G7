@@ -49,13 +49,19 @@ div.card-content {
 
 .button.button.is-primary {
     margin-right: 3px;
- }
+}
 
- h2 {
+h2 {
     border-left: solid 5px var(--cin);
     padding: 15px;
- }
+}
 
- .title.is-4 {
+.title.is-4 {
     color: var(--cin);
- }
+}
+
+
+
+.hidden {
+    display: none;
+}
