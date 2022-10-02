@@ -20,6 +20,8 @@
 
 
 <body>
+
+<!-- NAV BAR -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item">
@@ -41,7 +43,7 @@
             <a href="myFavePage.html" id="userFaves" class="navbar-item">My Faves</a>
           </div>
         </div>
-        <a href="#trending" class="navbar-item">
+        <a href="#trending" class="navbar-item" id="trendingBtn">
           Trending
         </a>
         <a id="nowPlayingBtn" class="navbar-item">
@@ -51,12 +53,8 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="js-modal-trigger button is-primary" data-target="modal-sign-up">
-              <strong>Sign up</strong>
-            </a>
-            <a class="js-modal-trigger button is-light" data-target="modal-sign-up">
-              Log in
-            </a>
+            <a class="js-modal-trigger button is-primary" data-target="modal-sign-up"><strong>Sign up</strong></a>
+            <a class="js-modal-trigger button is-light" data-target="modal-sign-up">Log in</a>
           </div>
         </div>
       </div>
@@ -69,7 +67,7 @@
       <div class="column is-10 has-text-centered">
         <h1 class="title is-2 has-text-white">Browse Now, Binge Later</h1>
         <div class="box has-text-centered">
-          <input class="input is-large" placeholder="What are you watching next?">
+          <input id="searchedmovie" class="input is-large" placeholder="What are you watching next?">
           <button id="searchBtn" class="button is-primary mt-3">
             <span class="material-symbols-outlined">
               arrow_right_alt
@@ -81,487 +79,58 @@
   </section>
 
   <!-- RESULTS -->
-  <section class="section is-medium">
+  <section class="section is-medium hidden" id="resultsSection">
     <div class="container">
       <h2 class="title resultsHeader has-text-white">Results</h2>
       <div class="columns is-desktop is-1 is-centered is-multiline" id="searchResCol">
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-one-fifth-desktop is-three-quarters-mobile">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500//nkBU4qXCmvJRjwmmWt5esjiFMQx.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- CONTAINER FOR MOVIE CARDS -->
       </div>
+    
     </div>
 
   </section>
+  
 
   <!-- TRENDING -->
-  <section id="trending" class="section">
+  <section id="trendingSection hidden" class="section">
     <div class="container">
       <h2 class="title has-text-white">Explore What's Trending</h2>
       <!-- Start Carousel -->
-      <div id="carousel-demo" class="carousel">
-        <div class="item-1">
-          <!-- Slide Content -->
-
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW&XJjZ7eWeLibRLWTw.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-2">
-          <!-- Slide Content -->
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW&XJjZ7eWeLibRLWTw.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-3">
-          <!-- Slide Content -->
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW&XJjZ7eWeLibRLWTw.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-4">
-          <!-- Slide Content -->
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW&XJjZ7eWeLibRLWTw.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-5">
-          <!-- Slide Content -->
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW&XJjZ7eWeLibRLWTw.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-6">
-          <!-- Slide Content -->
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW&XJjZ7eWeLibRLWTw.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-7">
-          <!-- Slide Content -->
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW&XJjZ7eWeLibRLWTw.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-8">
-          <!-- Slide Content -->
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by5">
-                <img alt="Movie Poster" src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW&XJjZ7eWeLibRLWTw.jpg">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p class="title is-4">Movie Title</p>
-              <div class="buttons is-flex-wrap-nowrap is-justify-content-center">
-                <button id="addBtn" class="button is-primary">
-                  <span class="material-symbols-outlined">
-                    add_circle
-                  </span>
-                  <button id="likeBtn" class="button is-primary">
-                    <span class="material-symbols-outlined">
-                      favorite
-                    </span>
-                    <button id="descriptionBtn" class="js-modal-trigger button is-primary" data-target="movie-modal">
-                      <span class="material-symbols-outlined">
-                        info
-                      </span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="carousel-trending" class="carousel">
+        
+        <!-- Slide Content -->
+        
       </div>
     </div>
-    <!-- End Carousel -->
+  </section>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-
-    <!-- LOGIN MODAL -->
-    <div id="modal-sign-up" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <form class="box">
-          <div class="field">
-            <label class="label">Email</label>
-            <div class="control">
-              <input class="input" type="email" placeholder="e.g. alex@example.com">
-            </div>
+  
+  <!-- LOGIN MODAL -->
+  <div id="modal-sign-up" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <form class="box">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="e.g. alex@example.com">
           </div>
-          <div class="field">
-            <label class="label">Password</label>
-            <div class="control">
-              <input class="input" type="password" placeholder="********">
-            </div>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="********">
           </div>
+        </div>
 
-          <button class="button is-primary">Sign in</button>
-        </form>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
+        <button class="button is-primary">Sign in</button>
+      </form>
     </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
 
-    <!-- MOVIE DESCRIPTION MODALS -->
+  <!-- MOVIE DESCRIPTION MODALS -->
+  <div id="containerForModals">
     <div id="movie-modal" class="modal">
       <div class="modal-background"></div>
       <div class="modal-content">
@@ -575,6 +144,13 @@
       </div>
       <button class="modal-close is-large" aria-label="close"></button>
     </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+    
 </body>
 
 </html>
