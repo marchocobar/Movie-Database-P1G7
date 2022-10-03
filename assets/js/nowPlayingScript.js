@@ -83,7 +83,7 @@ for (var i = 0; i < 10; i++) {
 
   var imgEl = document.createElement("img")
   imgEl.setAttribute("alt", "Movie Poster");
-  imgEl.classList.add("movieImgNP")
+  imgEl.classList.add("movieImgNP");
  
   
   var cardContentEl = document.createElement("div")
