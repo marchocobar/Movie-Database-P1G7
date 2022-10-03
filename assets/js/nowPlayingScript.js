@@ -13,13 +13,13 @@ var cinemasNearby = {
     "method": "GET",
     "timeout": 0,
     "headers": {
-        "api-version": "v200",
-        "Authorization": "Basic RURVQ18xNl9YWDoxSDlzN2JYeUtZS1E=",
-        "client": "EDUC_16",
-        "x-api-key": "Yzkr0rJSl16Amk6wf3K5j9DT7uLWdEmP6Xat753j",
-        "device-datetime": "2022-09-28T12:07:57.296Z",
-        "territory": "XX",
-        "geolocation": "-22.0;14.0",
+      "api-version": "v200",
+      "Authorization": "Basic RURVQ18xNjpBdVQ4eGxPeEdVNFY=",
+      "client": "EDUC_16",
+      "x-api-key": "bfQow74ddTa0ilpFFedIj92hp0ZFLuDD5RPthZZA",
+      "device-datetime": "2022-09-28T12:07:57.296Z",
+      "territory": "US",
+      "geolocation": "40.488304;-74.447751",
     },
 };  
 
