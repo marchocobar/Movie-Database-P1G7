@@ -1,12 +1,13 @@
+var localQuery = "https://api.themoviedb.org/3/movie/now_playing?api_key=7ea50f67c90ee9445e3909943a9fd7a9" + "&language=en-US&page=1"
+var NowPlayingQuery = "https://api.themoviedb.org/3/movie/now_playing?api_key=7ea50f67c90ee9445e3909943a9fd7a9&language=en-US&page=1"
+
+var nowPlayingContainer = document.getElementById("nowPlayingContainer")
+var imgElNPGroup = document.getElementsByClassName("movieImgNP");
+var titleElNPGroup = document.getElementsByClassName("movieTitleNP")
+
+
 var tableBodyEl = document.getElementById("tablebody")
 var filmColEl = document.getElementById("filmCol")
-
-var nowPlayingContainer = document.getElementById("carousel-nowplaying")
-var modalDesCont = document.getElementById("modalDesCont")
-var modalContainer = document.getElementById("containerForModals")
-
-var localQuery = "https://api.themoviedb.org/3/movie/now_playing?api_key=7ea50f67c90ee9445e3909943a9fd7a9" + "&language=en-US&page=1"
-
 var cinemasNearby = {
     "url": "https://api-gate2.movieglu.com/cinemasNearby/?n=5",
     "method": "GET",
@@ -64,209 +65,67 @@ $.ajax(cinemasNearby).done(function (response) {
     };
 });
 
-
+//Creates Movie Cards for Now Playing
 for (var i = 0; i < 10; i++) {
 
-    // CREATE MOVIE CARDS
+  // CREATE MOVIE CARDS
+  var cardColEl = document.createElement("div")
+  cardColEl.classList.add("column", "is-one-fifth-desktop", "is-three-quarters-mobile")
+
+  var cardEl = document.createElement("div")
+  cardEl.classList.add("card");
+
+  var cardImgEl = document.createElement("div")
+  cardImgEl.classList.add("card-image");
+
+  var figureEl = document.createElement("figure")
+  figureEl.classList.add("image", "is-4by5");
+
+  var imgEl = document.createElement("img")
+  imgEl.setAttribute("alt", "Movie Poster");
+  imgEl.classList.add("movieImgNP")
+ 
   
-    var carCardEl = document.createElement("div")
-    carCardEl.classList.add("card");
+  var cardContentEl = document.createElement("div")
+  cardContentEl.classList.add("card-content");
+
+  var titleEL = document.createElement("p")
+  titleEL.classList.add("title", "is-6", "movieTitleNP");
+ 
+  cardContentEl.append(
+    titleEL,
+  );
+
+  figureEl.append(imgEl);
+  cardImgEl.append(figureEl);
   
-    var cardImgEl = document.createElement("div")
-    cardImgEl.classList.add("card-image");
+  cardEl.append(
+      cardImgEl,
+      cardContentEl,    
+  );
+
+  cardColEl.append(cardEl);
+
+  nowPlayingContainer.append(cardColEl);
   
-    var figureEl = document.createElement("figure")
-    figureEl.classList.add("image", "is-4by5");
-  
-    var imgEl = document.createElement("img")
-    imgEl.setAttribute("alt", "Movie Poster");
-    imgEl.classList.add("movieImgResult")
-    
-    var cardContentEl = document.createElement("div")
-    cardContentEl.classList.add("card-content");
-  
-    var titleEL = document.createElement("p")
-    titleEL.classList.add("title", "is-6", "movieTitleResult");
-   
-  
-    var buttonGroupDV = document.createElement("div")
-    buttonGroupDV.classList.add("buttons", "is-flex-wrap-nowrap", "is-justify-content-center");
-    
-    var addBtnEl = document.createElement("button")
-    addBtnEl.classList.add("button", "is-primary");
-    addBtnEl.setAttribute("id", "addBtn");
-  
-    var addBtnSym = document.createElement("span")
-    addBtnSym.classList.add("material-symbols-outlined");
-    addBtnSym.innerHTML = "add_circle";
-    
-  
-    var likeBtnEl = document.createElement("button")
-    likeBtnEl.classList.add("button", "is-primary");
-    likeBtnEl.setAttribute("id", "likeBtn");
-  
-    var likeBtnSym = document.createElement("span")
-    likeBtnSym.classList.add("material-symbols-outlined");
-    likeBtnSym.innerHTML = "favorite";
-  
-    var descriptionBtnEl = document.createElement("button")
-    descriptionBtnEl.classList.add("js-modal-trigger", "button", "is-primary");
-    descriptionBtnEl.setAttribute("data-target", "movie-modal-" + i);
-  
-    var descriptionBtnSym = document.createElement("span")
-    descriptionBtnSym.classList.add("material-symbols-outlined");
-    descriptionBtnSym.innerHTML = "info";
-  
-    addBtnEl.append(addBtnSym);
-    likeBtnEl.append(likeBtnSym);
-    descriptionBtnEl.append(descriptionBtnSym);
-  
-    buttonGroupDV.append(
-      addBtnEl,
-      likeBtnEl,
-      descriptionBtnEl,
-    );
-  
-    cardContentEl.append(
-      titleEL,
-      buttonGroupDV,
-    );
-  
-    figureEl.append(imgEl);
-    cardImgEl.append(figureEl);
-    
-    carCardEl.append(
-        cardImgEl,
-        cardContentEl,    
-    );
-  
-    nowPlayingContainer.append(carCardEl);
-  
-    // CREATE MOVIE CARD MODALS
-    var movieModalEl = document.createElement("div")
-    movieModalEl.classList.add("modal");
-    movieModalEl.setAttribute("id", "movie-modal-" + i);
-  
-    var movieModalBackground = document.createElement("div")
-    movieModalBackground.classList.add("modal-background");
-  
-    var movieModalContent = document.createElement("div")
-    movieModalContent.classList.add("modal-content");
-  
-    var movieModalCard = document.createElement("div")
-    movieModalCard.classList.add("card");
-  
-    var movieModalCardContent = document.createElement("div")
-    movieModalCardContent.classList.add("card-content");
-  
-    var movieModalContentDes = document.createElement("p")
-    movieModalContentDes.classList.add("content", "modalDesResult");
-  
-  
-    var movieModalCloseBtn = document.createElement("button")
-    movieModalCloseBtn.classList.add("modal-close", "is-large");
-    movieModalCloseBtn.setAttribute("aria-label", "close");
-  
-    movieModalCardContent.append(movieModalContentDes);
-    movieModalCard.append(movieModalCardContent);
-    movieModalContent.append(movieModalCard);
-  
-  
-    movieModalEl.append(
-      movieModalBackground,
-      movieModalContent,
-      movieModalCloseBtn,
-    );
-  
-    modalContainer.append(movieModalEl);
-  
-    
 };
 
-var imgElResultGroup = document.getElementsByClassName("movieImgResult");
-var titleELResultGroup = document.getElementsByClassName("movieTitleResult")
-var modalDesResultGroup = document.getElementsByClassName("modalDesResult")
+function getNowPlaying() {
+  console.log(NowPlayingQuery);
 
-function getTrending() {
-  console.log(localQuery);
-
-  fetch(localQuery)
+  fetch(NowPlayingQuery)
   .then(function(response){
     return response.json();
   })
   .then(function(data){
-   
+    for (var i =0; i< 10; i++){
+      imgElNPGroup[i].setAttribute("src", "https://image.tmdb.org/t/p/w500/" + data.results[i].poster_path);
 
-    for (var i = 0; i < 15; i++) {
+      titleElNPGroup[i].textContent = data.results[i].original_title;
 
-     
-     
-      imgElResultGroup[i].setAttribute("src", "https://image.tmdb.org/t/p/w500/" + data.results.cinemas[i].poster_path);
-     
-      titleELResultGroup[i].textContent = data.results[i].original_title;
-
-      
-      modalDesResultGroup[i].textContent = data.results[i].overview;
-
-     
     }
-  });
-  
-};
 
-getTrending();
+  })
+}
 
-
-//TRENDING CAROUSEL
-bulmaCarousel.attach('#carousel-nowplaying', {
-    slidesToScroll: 1,
-    slidesToShow: 4,
-    infinite: true
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // Functions to open and close a modal
-    function openModal($el) {
-      $el.classList.add('is-active');
-    }
-  
-    function closeModal($el) {
-      $el.classList.remove('is-active');
-    }
-  
-    function closeAllModals() {
-      (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-        closeModal($modal);
-      });
-    }
-  
-    // Add a click event on buttons to open a specific modal
-    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-      const modal = $trigger.dataset.target;
-      const $target = document.getElementById(modal);
-  
-      $trigger.addEventListener('click', () => {
-        openModal($target);
-      });
-    });
-  
-    // Add a click event on various child elements to close the parent modal
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-      const $target = $close.closest('.modal');
-  
-      $close.addEventListener('click', () => {
-        closeModal($target);
-      });
-    });
-  
-    // Add a keyboard event to close all modals
-    document.addEventListener('keydown', (event) => {
-      const e = event || window.event;
-  
-      if (e.keyCode === 27) { // Escape key
-        closeAllModals();
-      }
-    });
-  });
-
+getNowPlaying();

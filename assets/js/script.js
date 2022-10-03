@@ -178,17 +178,12 @@ function getSearches() {
    
 
     for (var i = 0; i < 10; i++) {
-
-     
      
       imgElResultGroup[i].setAttribute("src", "https://image.tmdb.org/t/p/w500/" + data.results[i].poster_path);
 
-  
       titleELResultGroup[i].textContent = data.results[i].original_title;
 
-      
       modalDesResultGroup[i].textContent = data.results[i].overview;
-
      
     }
   });
@@ -197,116 +192,121 @@ function getSearches() {
 
 searchBtn.addEventListener("click", getSearches);
 
+// for (var i = 0; i < 8; i++) {
+//   var carouselCard = document.createElement("div")
+//   carouselCard.classList.add("card");
+  
+//   var carouselCardImgContGp = document.createElement("div")
+//   carouselCardImgContGp.classList.add("card-image");
 
+//   var carouselFigureEl = document.createElement("figure")
+//   carouselFigureEl.classList.add("image", "is-4by5");
 
-function getTrending() {
+//   var carouselImgEl = document.createElement("img")
+//   carouselImgEl.classList.add("trendingImage")
+//   carouselImgEl.setAttribute("alt", "Movie Poster")
+//   carouselFigureEl.append(carouselImgEl);
 
-  console.log(trendingQuery);
+//   var carouselCardContGp = document.createElement("div")
+//   carouselCardContGp.classList.add("card-content");
 
-  fetch(trendingQuery)
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(data){
-    console.log(data)
+//   var carouselMovieTitleEl = document.createElement("p")
+//   carouselMovieTitleEl.classList.add("title", "is-6", "trendingTitle");
 
-    for (var i = 0; i < 10; i++) {
-      var carouselCard = document.createElement("div")
-      carouselCard.classList.add("card");
-      
-      var carouselCardImgContGp = document.createElement("div")
-      carouselCardImgContGp.classList.add("card-image");
+//   var carouselBtnGp = document.createElement("div")
+//   carouselBtnGp.classList.add("buttons", "is-flex-wrap-nowrap", "is-justify-content-center");
+
+//   //ADD BUTTON SECTION
+//   var carouselAddBtn = document.createElement("button")
+//   carouselAddBtn.classList.add("button", "is-primary")
+//   carouselAddBtn.setAttribute("id", "addBtn")
+
+//   var carouselAddBtnSpan = document.createElement("span")
+//   carouselAddBtnSpan.classList.add("material-symbols-outlined");
+//   carouselAddBtnSpan.innerHTML = "add_circle";
+//   carouselAddBtn.append(carouselAddBtnSpan);
+  
+//   //LIKE BUTTON SECTION
+//   var carouselLikeBtn = document.createElement("button")
+//   carouselLikeBtn.classList.add("button", "is-primary");
+//   carouselLikeBtn.setAttribute("id", "likeBtn");
+
+//   var carouselLikeBtnSpan = document.createElement("span")
+//   carouselLikeBtnSpan.classList.add("material-symbols-outlined");
+//   carouselLikeBtnSpan.innerHTML = "favorite";
+//   carouselLikeBtn.append(carouselLikeBtnSpan);
+
+//   //DESCRIPTION BUTTON SECTION
+//   var carouselDesBtn = document.createElement("button")
+//   carouselDesBtn.classList.add("js-modal-trigger", "button", "is-primary")
+//   carouselDesBtn.setAttribute("id", "descriptionBtn")
+//   carouselDesBtn.setAttribute("data-target", "trending-modal-" + i)
+//   // modalDesResultGroup[i].textContent = data.results[i].overview;
+
+//   var carouselDesBtnSpan = document.createElement("span")
+//   carouselDesBtnSpan.classList.add("material-symbols-outlined");
+//   carouselDesBtnSpan.innerHTML = "info";
+//   carouselDesBtn.append(carouselDesBtnSpan);
     
-      var carouselFigureEl = document.createElement("figure")
-      carouselFigureEl.classList.add("image", "is-4by5");
-    
-      var carouselImgEl = document.createElement("img")
-      carouselImgEl.classList.add("trendingImage")
-      carouselImgEl.setAttribute("alt", "Movie Poster")
-      carouselFigureEl.append(carouselImgEl);
-      carouselImgEl.setAttribute("src", "https://image.tmdb.org/t/p/w500/" + data.results[i].poster_path);
+//   carouselCardImgContGp.append(
+//     carouselFigureEl,
+//   );
 
-      var carouselCardContGp = document.createElement("div")
-      carouselCardContGp.classList.add("card-content");
-    
-      var carouselMovieTitleEl = document.createElement("p")
-      carouselMovieTitleEl.classList.add("title", "is-6", "trendingTitle");
-      carouselMovieTitleEl.textContent = data.results[i].original_title;
+//   carouselBtnGp.append(
+//     carouselAddBtn,
+//     carouselLikeBtn,
+//     carouselDesBtn,
+//   );
+
+//   carouselCardContGp.append(
+//     carouselMovieTitleEl,
+//     carouselBtnGp,
+//   );
+  
+
+//   carouselCard.append(
+//     carouselCardImgContGp,
+//     carouselCardContGp,
+//   );
+
+//   trendingCarouselContainer.append(carouselCard);
+// }
+
+
+// function getTrending() {
+
+//   console.log(trendingQuery);
+
+//   fetch(trendingQuery)
+//   .then(function(response){
+//     return response.json();
+//   })
+//   .then(function(data){
+//     console.log(data)
+
+//     for (var i = 0; i < 10; i++) {
       
-      var carouselBtnGp = document.createElement("div")
-      carouselBtnGp.classList.add("buttons", "is-flex-wrap-nowrap", "is-justify-content-center");
+//       imgElTrendingGroup[i].setAttribute("src", "https://image.tmdb.org/t/p/w500/" + data.results[i].poster_path);
 
-      //ADD BUTTON SECTION
-      var carouselAddBtn = document.createElement("button")
-      carouselAddBtn.classList.add("button", "is-primary")
-      carouselAddBtn.setAttribute("id", "addBtn")
-
-      var carouselAddBtnSpan = document.createElement("span")
-      carouselAddBtnSpan.classList.add("material-symbols-outlined");
-      carouselAddBtnSpan.innerHTML = "add_circle";
-      carouselAddBtn.append(carouselAddBtnSpan);
       
-      //LIKE BUTTON SECTION
-      var carouselLikeBtn = document.createElement("button")
-      carouselLikeBtn.classList.add("button", "is-primary");
-      carouselLikeBtn.setAttribute("id", "likeBtn");
+//       carouselMovieTitleEl.textContent = data.results[i].original_title;
+      
 
-      var carouselLikeBtnSpan = document.createElement("span")
-      carouselLikeBtnSpan.classList.add("material-symbols-outlined");
-      carouselLikeBtnSpan.innerHTML = "favorite";
-      carouselLikeBtn.append(carouselLikeBtnSpan);
+//     }
+//   });
+//   // trendingSection.classList.remove("hidden")
+// };
 
-      //DESCRIPTION BUTTON SECTION
-      var carouselDesBtn = document.createElement("button")
-      carouselDesBtn.classList.add("js-modal-trigger", "button", "is-primary")
-      carouselDesBtn.setAttribute("id", "descriptionBtn")
-      carouselDesBtn.setAttribute("data-target", "trending-modal-" + i)
-       // modalDesResultGroup[i].textContent = data.results[i].overview;
-
-      var carouselDesBtnSpan = document.createElement("span")
-        carouselDesBtnSpan.classList.add("material-symbols-outlined");
-        carouselDesBtnSpan.innerHTML = "info";
-        carouselDesBtn.append(carouselDesBtnSpan);
-        
-        carouselCardImgContGp.append(
-          carouselFigureEl,
-        );
-
-        carouselBtnGp.append(
-          carouselAddBtn,
-          carouselLikeBtn,
-          carouselDesBtn,
-        );
-
-        carouselCardContGp.append(
-          carouselMovieTitleEl,
-          carouselBtnGp,
-        );
-        
-
-        carouselCard.append(
-          carouselCardImgContGp,
-          carouselCardContGp,
-        );
-
-        trendingCarouselContainer.append(carouselCard);
-
-     
-    }
-  });
-  trendingSection.classList.remove("hidden")
-};
-
-trendingBtn.addEventListener("click", getTrending)
+// trendingBtn.addEventListener("click", getTrending)
 
 
 
-//TRENDING CAROUSEL
-bulmaCarousel.attach('#carousel-trending', {
-    slidesToScroll: 5,
-    slidesToShow: 5,
-    infinite: true
-});
+// //TRENDING CAROUSEL
+// bulmaCarousel.attach('#carousel-trending', {
+//     slidesToScroll: 5,
+//     slidesToShow: 5,
+//     infinite: true
+// });
 
 
 // MODALS
