@@ -18,6 +18,16 @@ var imgElResultGroup = document.getElementsByClassName("movieImgResult");
 var titleELResultGroup = document.getElementsByClassName("movieTitleResult")
 var modalDesResultGroup = document.getElementsByClassName("modalDesResult")
 
+var addBtnGroup = document.getElementsByClassName("btnAdd")
+var addSpnGroup  = document.getElementsByClassName("spnAdd")
+
+var likeBtnGroup = document.getElementsByClassName("btnLike")
+var likeSpnGroup = document.getElementsByClassName("spnLike")
+
+
+var watchListArr= []
+var favoriteListArr = []
+
 
 //TRENDING CAROUSEL ELEMENTS
 var trendingBtn = document.getElementById("trendingBtn")
@@ -73,20 +83,20 @@ for (var i = 0; i < 10; i++) {
   buttonGroupDV.classList.add("buttons", "is-flex-wrap-nowrap", "is-justify-content-center");
   
   var addBtnEl = document.createElement("button")
-  addBtnEl.classList.add("button", "is-primary");
-  addBtnEl.setAttribute("id", "addBtn");
+  addBtnEl.classList.add("button", "is-primary", "btnAdd");
+ 
 
   var addBtnSym = document.createElement("span")
-  addBtnSym.classList.add("material-symbols-outlined");
+  addBtnSym.classList.add("material-symbols-outlined", "spnAdd");
   addBtnSym.innerHTML = "add_circle";
   
 
   var likeBtnEl = document.createElement("button")
-  likeBtnEl.classList.add("button", "is-primary");
-  likeBtnEl.setAttribute("id", "likeBtn");
+  likeBtnEl.classList.add("button", "is-primary", "btnLike");
+  
 
   var likeBtnSym = document.createElement("span")
-  likeBtnSym.classList.add("material-symbols-outlined");
+  likeBtnSym.classList.add("material-symbols-outlined", "spnLike");
   likeBtnSym.innerHTML = "favorite";
 
   var descriptionBtnEl = document.createElement("button")
@@ -166,6 +176,7 @@ for (var i = 0; i < 10; i++) {
 };
 
 
+
 function getSearches() {
   query = searchQuery + encodeURI(searchedMovieInput.value)
   console.log(query);
@@ -183,14 +194,56 @@ function getSearches() {
 
       titleELResultGroup[i].textContent = data.results[i].original_title;
 
+      addBtnGroup[i].setAttribute("data-watchID", data.results[i].id);
+      addSpnGroup[i].setAttribute("data-watchID", data.results[i].id);
+
+      likeBtnGroup[i].setAttribute("data-favoriteID", data.results[i].id);
+      likeSpnGroup[i].setAttribute("data-favoriteID", data.results[i].id);
+      
+
       modalDesResultGroup[i].textContent = data.results[i].overview;
      
     }
+
+    document.addEventListener("click", (event)=>{
+
+      if (event.target.getAttribute("data-watchID")){
+       var watchMovieID = event.target.getAttribute("data-watchID")
+    
+        if (!watchListArr.includes(watchMovieID)){
+          watchListArr.push(watchMovieID);
+        };
+
+
+        localStorage.setItem("watchList", JSON.stringify(watchListArr));
+      
+      } else if (event.target.getAttribute("data-favoriteID")) {
+        var favoriteMovieID = event.target.getAttribute("data-favoriteID")
+       
+
+        if (!favoriteListArr.includes(favoriteMovieID)){
+          favoriteListArr.push(favoriteMovieID);
+        };
+
+        localStorage.setItem("favoriteList", JSON.stringify(favoriteListArr));
+       
+
+      }else {
+        return
+      };
+      
+    
+    });
+
   });
   resultsSection.classList.remove("hidden")
+
+   
 };
 
-searchBtn.addEventListener("click", getSearches);
+searchBtn.addEventListener("click", getSearches)
+
+
 
 // for (var i = 0; i < 8; i++) {
 //   var carouselCard = document.createElement("div")
@@ -310,7 +363,8 @@ searchBtn.addEventListener("click", getSearches);
 
 
 // MODALS
-  document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
     
     // Functions to open and close a modal
     function openModal($el) {
@@ -354,10 +408,10 @@ searchBtn.addEventListener("click", getSearches);
         closeAllModals();
       }
     });
-  });
+});
 
-  // Hamburger Menu
-  document.addEventListener('DOMContentLoaded', () => {
+// Hamburger Menu
+document.addEventListener('DOMContentLoaded', () => {
 
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -377,20 +431,20 @@ searchBtn.addEventListener("click", getSearches);
       });
     });
   
-  });
+});
 
-  var emailInput = document.querySelector("#email");
-  var passwordInput = document.querySelector("#password");
-  var signUpButton = document.querySelector("#sign-up");
-  var loginButton = document.querySelector("#log-in")
-  var msgDiv = document.querySelector("#msg");
+var emailInput = document.querySelector("#email");
+var passwordInput = document.querySelector("#password");
+var signUpButton = document.querySelector("#sign-up");
+var loginButton = document.querySelector("#log-in")
+var msgDiv = document.querySelector("#msg");
 
-  function displayMessage(type, message) {
+function displayMessage(type, message) {
     msgDiv.textContent = message;
     msgDiv.setAttribute("class", type);
-  }
+}
    
-  signUpButton.addEventListener("click", function(event) {
+signUpButton.addEventListener("click", function(event) {
     event.preventDefault();
   
     var email = document.querySelector("#email").value;
@@ -405,13 +459,12 @@ searchBtn.addEventListener("click", getSearches);
   
       window.localStorage.setItem("email", JSON.stringify(email));
       window.localStorage.setItem("password", JSON.stringify(password));
-      
     }
-  })
+});
     
 
 
-  loginButton.addEventListener("click", function(event) {
+loginButton.addEventListener("click", function(event) {
     event.preventDefault();
      JSON.parse(window.localStorage.getItem("email"));
     JSON.parse(window.localStorage.getItem("password"));
@@ -421,4 +474,4 @@ searchBtn.addEventListener("click", getSearches);
     } else {
       displayMessage("Incorrect email or password")
     }
-  });
+});

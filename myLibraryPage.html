@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Movie Database App</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="./assets/css/style.css">
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Database App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
         
-    <body>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="index.html">
-            <img src="assets/Image/imageedit_6_6112110237fin.png" style="max-height: 90px">
-          </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="assets/Image/imageedit_6_6112110237fin.png" style="max-height: 90px">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-                <u class="navbar-item">
-                  To Watch
-                </u>
-                <a href="myFavePage.html" class="navbar-item">
-                  My Faves
-                </a>
-              </div>
-            </div>
-          </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+              <u class="navbar-item">
+                To Watch
+              </u>
+              <a href="myFavePage.html" class="navbar-item">
+                My Faves
+              </a>
             </div>
           </div>
         </div>
+          </div>
+        </div>
+      </div>
 
-      </nav>
+    </nav>
 
-      <section class="pageTitle section has-text-centered">
-        <h1 class="title nowPlayingTitle has-text-white" id="nowPlayingHeader">To Watch</h1>
-      </section>
+    <section class="pageTitle section has-text-centered">
+      <h1 class="title nowPlayingTitle has-text-white" id="nowPlayingHeader">To Watch</h1>
+    </section>
+
+    <section class="section" id="watchSection">
+      <div id="toWatchContainer" class="columns is-desktop is-1 is-centered is-multiline" >
+
+      </div>
+
+    </section>
+
+    <script src="./assets/js/myLibraryPageScript.js"></script>
+  </body>
+</html>
