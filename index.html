@@ -54,7 +54,7 @@
         <div class="navbar-item">
           <div class="buttons">
             <a class="js-modal-trigger button is-primary" data-target="modal-sign-up"><strong>Sign up</strong></a>
-            <a class="js-modal-trigger button is-light" data-target="modal-sign-up">Log in</a>
+            <a class="js-modal-trigger button is-light" data-target="modal-log-in">Log in</a>
           </div>
         </div>
       </div>
@@ -135,17 +135,40 @@
         <div class="field">
           <label class="label">Email</label>
           <div class="control">
-            <input class="input" type="email" placeholder="e.g. alex@example.com">
+            <input id="email" class="input" type="email" placeholder="e.g. alex@example.com">
           </div>
         </div>
         <div class="field">
           <label class="label">Password</label>
           <div class="control">
-            <input class="input" type="password" placeholder="********">
+            <input id="password" class="input" type="password" placeholder="********">
           </div>
         </div>
+        <div id="msg"></div>
+        <button id="sign-up" class="button is-primary">Sign Up</button>
+      </form>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
 
-        <button class="button is-primary">Sign in</button>
+  <div id="modal-log-in" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <form class="box">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input id="email" class="input" type="email" placeholder="e.g. alex@example.com">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input id="password" class="input" type="password" placeholder="********">
+          </div>
+        </div>
+        <div id="msg"></div>
+        <button id="log-in" class="button is-primary">Log in</button>
       </form>
     </div>
     <button class="modal-close is-large" aria-label="close"></button>

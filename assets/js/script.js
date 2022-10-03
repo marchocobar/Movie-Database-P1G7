@@ -379,9 +379,46 @@ searchBtn.addEventListener("click", getSearches);
   
   });
 
+  var emailInput = document.querySelector("#email");
+  var passwordInput = document.querySelector("#password");
+  var signUpButton = document.querySelector("#sign-up");
+  var loginButton = document.querySelector("#log-in")
+  var msgDiv = document.querySelector("#msg");
+
+  function displayMessage(type, message) {
+    msgDiv.textContent = message;
+    msgDiv.setAttribute("class", type);
+  }
+   
+  signUpButton.addEventListener("click", function(event) {
+    event.preventDefault();
+  
+    var email = document.querySelector("#email").value;
+    var password = document.querySelector("#password").value;
+  
+    if (email === "") {
+      displayMessage("error", "Email cannot be blank");
+    } else if (password === "") {
+      displayMessage("error", "Password cannot be blank");
+    } else {
+      displayMessage("success", "Registered successfully");
+  
+      window.localStorage.setItem("email", JSON.stringify(email));
+      window.localStorage.setItem("password", JSON.stringify(password));
+      
+    }
+  })
     
 
 
+  loginButton.addEventListener("click", function(event) {
+    event.preventDefault();
+     JSON.parse(window.localStorage.getItem("email"));
+    JSON.parse(window.localStorage.getItem("password"));
 
-
-
+    if (emailInput === "email" && passwordInput === "password") {
+      displayMessage("Successfully Logged In");
+    } else {
+      displayMessage("Incorrect email or password")
+    }
+  });
