@@ -408,17 +408,17 @@ searchBtn.addEventListener("click", getSearches);
       
     }
   })
-    
-
 
   loginButton.addEventListener("click", function(event) {
     event.preventDefault();
-     JSON.parse(window.localStorage.getItem("email"));
+
+    JSON.parse(window.localStorage.getItem("email"));
     JSON.parse(window.localStorage.getItem("password"));
 
     if (emailInput === "email" && passwordInput === "password") {
       displayMessage("Successfully Logged In");
     } else {
       displayMessage("Incorrect email or password")
-    }
+    }     
+
   });
