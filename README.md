@@ -17,8 +17,11 @@ clone this repository to receive all the files.
 ## Features
 
 Users can sign up to create an account or login to an existing one.
+
 Users can search for any film and results will apear on the same page.
+
 Users have the option to save any film to their library or 'favorite' a film they like. 
+
 Users see what movies are currently playing in theaters in the "Now Playing" section of the application.
 
  
