@@ -1,26 +1,25 @@
-# Movie-Database-P1G7
-Binge
-##
-With Hollywood taking less and less risks in recent years with original ideas,
-streaming services like Netflix and Hbo Max are constantly being filled with new movies and shows every week!
-Binge is a program that helps the user decide what to watch next. It can also save the users favorites
-as well as keep track of their watched history, all in their own respective page.
- 
-The program even has the ability to show what movies are playing at the user's location
- 
-No longer does the user have to pause and think if they seen a movie when asked, they can just pull out the Binge movie companion!
+# BINGE
 
+## User Story
+
+As a user looking for a something to watch, I would like an application that allows me to search for movies that I can then save 
+to a list so I can keep track of my options. I can also favorite movies that I have seen. If I want to see a movie in theaters, I am presented with 
+the current movies now playing in theaters.
  
-## Screenshot HERE!
+## Usage
 
 ![Screenshot 2022-10-03 181404](https://user-images.githubusercontent.com/110071825/193695457-85be5509-3103-485c-93bb-534ba9857458.png)
 [Deployed Site](https://marchocobar.github.io/Movie-Database-P1G7/index.html)
 
+This program can be run through a browser using the above link to the deployed application. In order to run this program locally you will need to
+clone this repository to receive all the files.
+
 ## Features
- 
-Save users To Watch list
-Save users Watched list
-Save users Standouts (favorite)
+
+Users can sign up to create an account or login to an existing one.
+Users can search for any film and results will apear on the same page.
+Users have the option to save any film to their library or 'favorite' a film they like. 
+Users see what movies are currently playing in theaters in the "Now Playing" section of the application.
 
  
 ## Credits
